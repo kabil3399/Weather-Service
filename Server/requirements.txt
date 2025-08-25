@@ -1,0 +1,11 @@
+flask
+requests
+pandas
+matplotlib
+# weasyprint
+openpyxl
+openmeteo-requests
+requests_cache
+retry_requests
+weasyprint
+flask-cors

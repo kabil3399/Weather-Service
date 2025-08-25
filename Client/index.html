@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weather Report Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Report Demo</h1>
+        <form id="weatherForm">
+            <label for="lat">Latitude:</label>
+            <input type="number" step="0.01" id="lat" name="lat" value="47.37" required />
+
+            <label for="lon">Longitude:</label>
+            <input type="number" step="0.01" id="lon" name="lon" value="8.55" required />
+
+            <button type="submit">Get Weather Data</button>
+        </form>
+
+        <div id="weatherResults"></div>
+
+        <div class="buttons">
+            <button id="downloadExcel">Download Excel Report</button>
+            <button id="downloadPDF">Download PDF Report</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

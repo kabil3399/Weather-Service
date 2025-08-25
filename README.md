@@ -23,10 +23,10 @@ Before running this project, ensure you have the following installed:
 ## ⚙️ Installation  
 
 1. **Clone the repository**  
-   ```bash
-   git clone https://github.com/your-username/weather-service.git
+   ```
+   https://github.com/kabil3399/Weather-Service.git
    cd weather-service
-
+   ```
 
 2. **Create virtual environment**
 
@@ -47,7 +47,13 @@ Before running this project, ensure you have the following installed:
      source venv/bin/activate
      ```
 
-4. **Install dependencies**
+4. **Move to the Server**
+
+   ```
+   cd Server
+   ```
+
+5. **Install dependencies**
 
    ```
    pip install -r requirements.txt

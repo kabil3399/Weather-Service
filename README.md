@@ -10,6 +10,22 @@ The service supports:
 
 ---
 
+## Project structure
+````
+|-- Client
+|   |-- index.html
+|   |-- script.js
+|   `-- styles.css
+|-- README.md
+|-- Server
+|   |-- Excel Report
+|   |-- PDF Report
+|   |-- WeatherService.py
+|   |-- requirements.txt
+|   `-- weather.db
+
+````
+
 ## 📋 Prerequisites  
 
 Before running this project, ensure you have the following installed:  
@@ -24,7 +40,7 @@ Before running this project, ensure you have the following installed:
 
 1. **Clone the repository**  
    ```
-   https://github.com/kabil3399/Weather-Service.git
+   git clone https://github.com/kabil3399/Weather-Service.git
    cd weather-service
    ```
 

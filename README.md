@@ -210,7 +210,7 @@ This demo shows how weather data is fetched from the backend and displayed in th
 ![Weather Demo Screenshot](./assets/ss.png)  
 
 #### Excel Screenshot
-![Weather Demo Screenshot](./assets/Excelss.png) 
+![Weather Demo Screenshot](./assets/excelss.png) 
 
 #### PDF Screenshot
 ![Weather Demo Screenshot](./assets/pdfss.png) 

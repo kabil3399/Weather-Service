@@ -25,6 +25,28 @@ The service supports:
 |   `-- weather.db
 
 ````
+## Issue Faced
+
+### Error
+
+````
+OSError: cannot load library 'libgobject-2.
+0-0': error 0x7e. Additionally, ctypes.util.find_library() did not manage to locate a
+librge to locate a library called 'libgobject-2.0-0'
+````
+This error is very common when using **WeasyPrint on Windows**. Unlike on Linux/macOS, it **requires GTK / Pango / Cairo libraries to be installed**, but your system doesn’t have them — that’s why it’s failing to load libgobject-2.0-0.
+
+
+### Solution
+
+○  Install GTK dependencies (complex on Windows)
+
+○ Download the GTK 3 Runtime for Windows:
+👉 https://github.com/tschoonj/GTK-for-Windows-Runtime-Environment-Installer/releases
+
+○ Install it, then add its bin/ folder to your PATH (so libgobject-2.0-0.dll is discoverable).
+
+○ Restart your virtual environment and try again.
 
 ## 📋 Prerequisites  
 
@@ -108,6 +130,11 @@ Example:
 ```
 /weather-report?lat=13.0827&lon=80.2707
 ```
+○ Calls the Open-Meteo API.
+
+○ Processes the returned time-series JSON.
+
+○ Stores results in a SQLite DB (timestamp, temperature, humidity).
 
 ---
 
@@ -119,6 +146,10 @@ GET /export/excel
 
 📥 Downloads `weather.xlsx`
 
+○ Returns the last 48 hours of data in an Excel file (.xlsx).
+
+○ Columns: timestamp | temperature_2m | relative_humidity_2m.
+
 ---
 
 ### 3. Export Weather Data (PDF with Graph)
@@ -128,6 +159,14 @@ GET /export/pdf?lat={latitude}&lon={longitude}
 ```
 
 📥 Downloads `weather_report.pdf`
+
+○ Title & metadata (location, date range).
+
+○ A line chart showing temperature & humidity vs time.
+
+○ Chart libraries allowed: Matplotlib / Plotly.
+
+○ PDF libraries Used: WeasyPrint
 
 ---
 
@@ -157,17 +196,25 @@ To demonstrate how the API endpoints can be consumed, a simple **HTML + CSS + Ja
 This demo shows how weather data is fetched from the backend and displayed in the browser.  
 
 ### 🚀 Run the Frontend  
-1. Make sure the Flask backend is running.  
-2. Open the `index.html` file in your browser.  
-3. You will see live weather data fetched via API.  
+
+○  Make sure the Flask backend is running.  
+○  Open the `index.html` file in your browser.  
+○  You will see live weather data fetched via API.  
 
 ---
 
 ### 📸 Demo Screenshot  
 
+#### UI Screenshot
+
 ![Weather Demo Screenshot](./assets/ss.png)  
 
- 
+#### Excel Screenshot
+![Weather Demo Screenshot](./assets/Excelss.png) 
+
+#### PDF Screenshot
+![Weather Demo Screenshot](./assets/pdfss.png) 
+
 
 ---
 
